@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block content %}
+    <div class="inline-flex items-center">
+        {% for snack in object_list %}
+            <a href="{% url 'snack_detail' snack.pk %}"></a><h5>{{ snack.name }}</h5></a>
+            <p>{{ snack.description }}</p>
+            <a href="{% url 'snack_update' snack.pk %}">Update</a>
+            <a href="{% url 'snack_delete' snack.pk %}">Delete</a>
+        {% endfor %}
+    </div>
+{% endblock content %}
